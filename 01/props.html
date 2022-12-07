@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello react</title>
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="test">
+
+</div>
+<div id="test2">
+
+</div>
+
+<script type="text/babel">
+  class Person extends React.Component{
+    render(){
+      const {name, sex, age} = this.props;
+      return (
+      <ul>
+        <li>姓名：{name}</li>
+        <li>性别：{sex}</li>
+        <li>年龄：{age}</li>
+      </ul>
+      )
+    }
+
+
+  }
+  const p = {name:'tom', sex:'man', age:19};
+
+  ReactDOM.render(<Person{...p}/>,document.getElementById('test'))
+
+  ReactDOM.render(<Person name = "jerry" sex = "woman" age={19} />, document.getElementById('test2'))
+</script>
+</body>
+</html>
